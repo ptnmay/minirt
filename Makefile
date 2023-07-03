@@ -6,7 +6,7 @@ HEADER = minirt.h
 LIBFT = ./libft/libft.a
 LIBFT_PATH = libft
 
-SRC = verify_file.c
+SRC = minirt.c verify_file.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
