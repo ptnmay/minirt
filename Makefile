@@ -6,7 +6,7 @@ HEADER = minirt.h
 LIBFT = ./libft/libft.a
 LIBFT_PATH = libft
 
-SRC = minirt.c verify_file.c
+SRC = minirt.c verify_file.c error.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
@@ -21,12 +21,13 @@ $(LIBFT) :
 
 clean:
 	rm -f $(OBJ)
+	@make -C $(LIBFT_PATH) clean
 
 fclean: clean
 	rm -f $(NAME)
+	@make -C $(LIBFT_PATH) fclean
 
 re: fclean all
-
 
 
 .PHONY: all clean fclean re

@@ -6,20 +6,30 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 06:20:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/05 00:15:42 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/05 08:10:48 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
-#include "./libft/libft.h"
-
 
 int main(int ac, char **av)
 {
-	if (verify_file(ac, av) == 1)
-		printf("file ok\n");
+	t_data	*data;
+
+	// data = NULL;
+	if (ac == 2)
+	{
+		verify_file(av);
+		data = malloc(sizeof(t_data));
+		(void)data;
+		// data = get_info(av[1]);
+	}
 	else
-		printf("file not ok\n");
+		error(BRED"wrong ac Σ(￣ロ￣lll)"RESET, 0);
+}
+
+
+
 	//check ac == 2;
 	//check file .rt;
 		//check len av[i] < 6 or 5?;
@@ -37,4 +47,3 @@ int main(int ac, char **av)
 		//struct for pl -> av[3]
 		//strcut fot sp -> av[4]
 		//struct for cy -> av[5]
-}

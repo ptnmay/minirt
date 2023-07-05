@@ -6,19 +6,31 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/05 01:10:23 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/05 08:10:33 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
-#include "./libft/libft.h"
 
-int verify_file(int ac, char **av)
+// t_data	*get_info(char *info)
+// {
+// 	int	fd;
+
+// 	fd = open(info[1], O_RDONLY);
+// 	if (!fd)
+// 		error("fd error", 1);
+// 	return()
+// }
+
+void	verify_file(char **av)
 {
-	if (ac == 2 && ft_strncmp(ft_strrchr(av[1], '.'), "rt", 4))
+	char	*rt;
+
+	rt = ft_strrchr(av[1], '.');
+	if (!(rt && ft_strncmp(ft_strrchr(av[1], '.'), ".rt", 3) == 0))
 	{
-		printf("input ok\n");
-		return (1);
+		error(BRED"file not correct Σ(￣ロ￣lll)"RESET, 0);
 	}
-	return(0);
+	else
+		printf(BBLU"file .rt correct (─‿‿─)\n"RESET);
 }
