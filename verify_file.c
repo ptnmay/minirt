@@ -6,40 +6,73 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 16:38:26 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:50:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
 		
+void	verify_len(char **line, int len)
+{
+	int	i;
+
+	i = 0;
+	while (line[i])
+		i++;
+	if (i != len)
+		error(BYEL"cannot calculate"RESET, 0);
+	printf(BMAG"len correct\n"RESET);
+}
 
 void	verify_line(char *line)
 {
+	int		i;
 	char	**chopchop;
 
+	i = 0;
 	chopchop = split_blank(line);
-	printf(BMAG"%s\n"RESET, chopchop[0]);
-	printf(BMAG"%s\n"RESET, chopchop[1]);
-	printf(BMAG"%s\n"RESET, chopchop[2]);
-	printf(BMAG"%s\n"RESET, chopchop[3]);
-	// printf(BYEL">>> i'm here <<<\n"RESET); //debug
+	if (chopchop[0][0] == 'A')
+		verify_a(chopchop);
+		// printf(BYEL"A\n"RESET);
+	else if (chopchop[0][0] == 'C')
+		// verify_c(chopchop);
+		printf(BYEL"C\n"RESET);
+	else if (chopchop[0][0] == 'L')
+		printf(BYEL"L\n"RESET);
+	else if (chopchop[0][0] == 's' && chopchop[0][1] == 'p')
+		printf(BYEL"sp\n"RESET);
+	else if (chopchop[0][0] == 'p' && chopchop[0][1] == 'l')
+		printf(BYEL"pl\n"RESET);
+	else if (chopchop[0][0] == 'c' && chopchop[0][1] == 'y')
+		verify_cy(chopchop);
+		// printf(BYEL"cy\n"RESET);
+	i++;
 	
 }
 
 void	goinfile(int fd)
  {
-	char	*gotline;
-	
+	int 		i;
+	char		*gotline;
+	static int	cnt;
+
+	i = 0;
 	gotline = get_next_line(fd);
 	if (gotline == NULL)
 		error(BRED"cannot get_line"RESET,0);
-	while (gotline)
+	cnt = ft_splitcntt(gotline);
+	while (gotline && i < cnt)
 	{
+		// printf(BMAG"this is len gotline [%d]\n"RESET, cnt);
 		if (gotline[0] == 0)
 			error(BRED"line wrong"RESET,0);
 		else
 		{
 			verify_line(gotline);
+			i++;
+			gotline = get_next_line(fd);
+			cnt = ft_splitcntt(gotline);
+			i = 0;
 			// break ;
 		}
 	}
@@ -47,7 +80,7 @@ void	goinfile(int fd)
  }
 
 void	verify_file(char **av)
-{
+{         
 	int		fd;
 	char	*rt;
 

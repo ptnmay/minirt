@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:51:15 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/07/11 16:06:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:02:19 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	**split_blank(char const *s);
+int		ft_splitcntt(char const *s);
 
 #endif // !LIBFT_H

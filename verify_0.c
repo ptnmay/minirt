@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   verify_0.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 23:08:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 18:11:30 by psaeyang         ###   ########.fr       */
+/*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
+/*   Updated: 2023/07/11 18:53:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
 
-void	error(char *s, int mode)
+void	verify_a(char **chop)
 {
-	ft_putendl_fd(s, 2);
-	if (mode == 0)
-		exit(0);
-	// else if (mode == 1)
-	// {
-	// 	free(data);
-	// 	exit(0)
-	// }
+	verify_len(chop, 3);
+	printf(BGRN"go check info\n"RESET);
+}
+
+void	verify_cy(char **chop)
+{
+	verify_len(chop, 5);
+	printf(BGRN"go check info\n"RESET);
 }

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/06 17:18:22 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:50:42 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,9 @@ typedef struct s_vars {
 void	verify_file(char **av);
 void	error(char *s, int mode);
 // void	error(char *s, t_data *data, int mode);
-t_data	*get_info(char *info);
+void	verify_a(char **chop);
+void	verify_cy(char **chop);
+void	verify_len(char **line, int len);
 
 
 #endif

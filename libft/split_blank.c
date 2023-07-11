@@ -6,13 +6,13 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:45:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 16:11:17 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:05:33 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_newsplit(char const *s, int *i, int *j)
+static char	*ft_newsplitt(char const *s, int *i, int *j)
 {
 	char	*tmp;
 
@@ -25,7 +25,7 @@ static char	*ft_newsplit(char const *s, int *i, int *j)
 	return (tmp);
 }
 
-static int	ft_splitcnt(char const *s)
+int	ft_splitcntt(char const *s)
 {
 	int	i;
 	int	j;
@@ -48,14 +48,14 @@ static int	ft_splitcnt(char const *s)
 	return (k);
 }
 
-static void	ft_zero(int *i, int *j, int *k)
+static void	ft_zeroo(int *i, int *j, int *k)
 {
 	*i = 0;
 	*j = 0;
 	*k = 0;
 }
 
-static char	**ft_cleararr(char **arr, int len)
+static char	**ft_cleararrr(char **arr, int len)
 {
 	int	i;
 
@@ -75,10 +75,10 @@ char	**split_blank(char const *s)
 
 	if (s == NULL)
 		return (NULL);
-	arr = (char **)malloc((ft_splitcnt(s) + 1) * sizeof (char *));
+	arr = (char **)malloc((ft_splitcntt(s) + 1) * sizeof (char *));
 	if (!arr)
 		return (NULL);
-	ft_zero(&i, &j, &len);
+	ft_zeroo(&i, &j, &len);
 	while (++i <= (int) ft_strlen(s))
 	{
 		while (s[j] == 32 || ((s[j] >= 9 && s[j] <= 13) && s[j]))
@@ -86,9 +86,9 @@ char	**split_blank(char const *s)
 		if (((s[i] == 32 || (s[i] >= 9 && s[i] <= 13) || !s[i]) &&
 		(s[i - 1] != 32 || (s[i - 1] >= 9 && s[i - 1] <= 13))) && i - j > 0)
 		{
-			arr[len++] = ft_newsplit(s, &i, &j);
+			arr[len++] = ft_newsplitt(s, &i, &j);
 			if (!arr[len - 1])
-				return (ft_cleararr(arr, len));
+				return (ft_cleararrr(arr, len));
 		}
 	}
 	arr[len] = NULL;
