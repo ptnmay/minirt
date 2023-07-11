@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/12 02:06:58 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/12 02:09:13 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,7 @@ void	verify_file(char **av)
 
 	rt = ft_strrchr(av[1], '.');
 	if (!(rt && ft_strncmp(ft_strrchr(av[1], '.'), ".rt", 4) == 0))
-	{
 		error(BRED"file not correct Σ(￣ロ￣lll)"RESET, 0);
-	}
 	else
 	{
 		printf(BBLU"file .rt correct (─‿‿─)\n"RESET);

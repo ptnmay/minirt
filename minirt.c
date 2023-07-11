@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 06:20:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 16:03:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/12 02:10:32 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,18 @@ int main(int ac, char **av)
 	t_data	*data;
 
 	// data = NULL;
-	if (ac == 2)
-	{
-		verify_file(av);
-		data = malloc(sizeof(t_data));
-		(void)data;
-		// data = get_info(av[1]);
-	}
-	else
+	if (ac != 2)
 		error(BRED"wrong ac Σ(￣ロ￣lll)"RESET, 0);
+	verify_file(av);
+	data = malloc(sizeof(t_data));
+	(void)data;
+	// data = get_info(av[1]);
 }
 
 
 
-	//check ac == 2;
-	//check file .rt;
+	//check ac == 2; *
+	//check file .rt; *
 		//check len av[i] < 6 or 5?;
 		//check av[0 - 5] == A, C, L, pl, sp, cy;
 		//check av[0][i] is
