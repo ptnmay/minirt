@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 18:55:26 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/12 01:48:10 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,21 @@ void	verify_len(char **line, int len)
 
 void	verify_line(char *line)
 {
-	int		i;
 	char	**chopchop;
 
-	i = 0;
 	chopchop = split_blank(line);
 	if (chopchop[0][0] == 'A')
 		verify_a(chopchop);
-		// printf(BYEL"A\n"RESET);
 	else if (chopchop[0][0] == 'C')
-		// verify_c(chopchop);
-		printf(BYEL"C\n"RESET);
+		verify_c(chopchop);
 	else if (chopchop[0][0] == 'L')
-		printf(BYEL"L\n"RESET);
+		verify_l(chopchop);
 	else if (chopchop[0][0] == 's' && chopchop[0][1] == 'p')
-		printf(BYEL"sp\n"RESET);
+		verify_sp(chopchop);
 	else if (chopchop[0][0] == 'p' && chopchop[0][1] == 'l')
-		printf(BYEL"pl\n"RESET);
+		verify_pl(chopchop);
 	else if (chopchop[0][0] == 'c' && chopchop[0][1] == 'y')
 		verify_cy(chopchop);
-		// printf(BYEL"cy\n"RESET);
-	i++;
-	
 }
 
 void	goinfile(int fd)
