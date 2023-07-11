@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/12 01:48:10 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/12 02:06:58 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	verify_line(char *line)
 		verify_pl(chopchop);
 	else if (chopchop[0][0] == 'c' && chopchop[0][1] == 'y')
 		verify_cy(chopchop);
+	else
+		error(BRED"info wrong"RESET,0);
 }
 
 void	goinfile(int fd)
@@ -57,17 +59,17 @@ void	goinfile(int fd)
 	while (gotline && i < cnt)
 	{
 		// printf(BMAG"this is len gotline [%d]\n"RESET, cnt);
-		if (gotline[0] == 0)
-			error(BRED"line wrong"RESET,0);
-		else
-		{
+		// if (gotline[0] == 0)
+		// 	error(BRED"line wrong"RESET,0);
+		// else
+		// {
 			verify_line(gotline);
 			i++;
 			gotline = get_next_line(fd);
 			cnt = ft_splitcntt(gotline);
 			i = 0;
 			// break ;
-		}
+		// }
 	}
 	
  }
