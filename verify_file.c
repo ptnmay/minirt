@@ -6,14 +6,39 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 10:20:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:41:58 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
+		
 
- void	goinfile(int fd)
+void	verify_line(char *line)
+{
+	char	**chopchop;
+
+	chopchop = ft_split(line, ' ');
+	printf("%s\n", chopchop[0]);
+	
+}
+
+void	goinfile(int fd)
  {
+	char	*gotline;
+	
+	gotline = get_next_line(fd);
+	printf(BYEL">>> i'm here <<<\n"RESET);
+	if (gotline == NULL)
+		error(BRED"cannot get_line"RESET,0);
+
+	while (gotline)
+	{
+		if (gotline[0])
+			verify_line(gotline);
+		else
+			error(BRED"line wrong"RESET,0);
+		
+	}
 	
  }
 
@@ -31,9 +56,8 @@ void	verify_file(char **av)
 	{
 		printf(BBLU"file .rt correct (─‿‿─)\n"RESET);
 		fd = open(av[1], O_RDONLY);
-		if (!fd)
-		{
-			
-		}
+		if (fd < 0)
+			error(BRED"cannot open file Σ(￣ロ￣lll)"RESET, 0);
+		goinfile(fd);
 	}
 }

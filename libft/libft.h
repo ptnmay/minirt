@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:51:15 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/07/11 10:28:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 14:49:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
-# include "get_next_line_bonus.h"
+# include "get_next_line.h"
 
 typedef struct s_list
 {
