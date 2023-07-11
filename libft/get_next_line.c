@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:56:06 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/03/08 08:15:14 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/04/05 09:48:20 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*get_next_line(int fd)
 	{
 		len = ft_strlen(buf[fd]);
 		tmp = buf[fd];
-		buf[fd] = (char *) calloc(len + BUFFER_SIZE + 1, 1);
+		buf[fd] = (char *) ft_calloc(len + BUFFER_SIZE + 1, 1);
 		if (!buf[fd])
 			return (NULL);
 		len = ft_strlcpy(buf[fd], tmp, len + 1);

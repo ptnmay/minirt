@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 14:41:58 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 16:38:26 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ void	verify_line(char *line)
 {
 	char	**chopchop;
 
-	chopchop = ft_split(line, ' ');
-	printf("%s\n", chopchop[0]);
+	chopchop = split_blank(line);
+	printf(BMAG"%s\n"RESET, chopchop[0]);
+	printf(BMAG"%s\n"RESET, chopchop[1]);
+	printf(BMAG"%s\n"RESET, chopchop[2]);
+	printf(BMAG"%s\n"RESET, chopchop[3]);
+	// printf(BYEL">>> i'm here <<<\n"RESET); //debug
 	
 }
 
@@ -27,17 +31,17 @@ void	goinfile(int fd)
 	char	*gotline;
 	
 	gotline = get_next_line(fd);
-	printf(BYEL">>> i'm here <<<\n"RESET);
 	if (gotline == NULL)
 		error(BRED"cannot get_line"RESET,0);
-
 	while (gotline)
 	{
-		if (gotline[0])
-			verify_line(gotline);
-		else
+		if (gotline[0] == 0)
 			error(BRED"line wrong"RESET,0);
-		
+		else
+		{
+			verify_line(gotline);
+			// break ;
+		}
 	}
 	
  }
@@ -59,5 +63,6 @@ void	verify_file(char **av)
 		if (fd < 0)
 			error(BRED"cannot open file Σ(￣ロ￣lll)"RESET, 0);
 		goinfile(fd);
+		close(fd);
 	}
 }

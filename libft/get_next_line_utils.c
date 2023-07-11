@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 14:22:50 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/03/08 08:18:29 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/04/05 09:46:20 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_strdup(const char *s1)
 
 	if (!s1)
 		return (NULL);
-	str = (char *) calloc(ft_strlen(s1) + 1, 1);
+	str = (char *) ft_calloc(ft_strlen(s1) + 1, 1);
 	if (!str)
 		return (NULL);
 	i = 0;
