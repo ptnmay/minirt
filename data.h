@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/11 18:50:42 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:56:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,10 @@ void	verify_file(char **av);
 void	error(char *s, int mode);
 // void	error(char *s, t_data *data, int mode);
 void	verify_a(char **chop);
+void	verify_c(char **chop);
+void	verify_l(char **chop);
+void	verify_sp(char **chop);
+void	verify_pl(char **chop);
 void	verify_cy(char **chop);
 void	verify_len(char **line, int len);
 
