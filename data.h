@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/12 02:10:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/12 21:47:47 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DATA_H
 
 # include <stdio.h>
+# include <stddef.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
