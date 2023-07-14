@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/12 01:48:28 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/13 10:33:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	verify_c(char **chop)
 {
 	verify_len(chop, 4);
-	printf(BCYN"C ok\n"RESET);
-	printf(BGRN"go check info\n\n"RESET);
+	printf(BCYN"C ok\n"RESET); //del
+	printf(BGRN"go check info\n\n"RESET); //del
 }
 
 void	verify_l(char **chop)
