@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 14:30:41 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/14 16:27:26 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/14 17:33:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ double	ft_atof(const char *str)
 	return (ans * neg);
 }
 
-int	main()
-{
-	char const *num = "120.22";
-	float f = ft_atof(num);
-	float real_f = atof(num);
-	printf("ft_atof > %f\n", f);
-	printf("real atof %f\n", real_f);
-}
+// int	main()
+// {
+// 	char const *num = "120.22";
+// 	float f = ft_atof(num);
+// 	float real_f = atof(num);
+// 	printf("ft_atof > %f\n", f);
+// 	printf("real atof %f\n", real_f);
+// }

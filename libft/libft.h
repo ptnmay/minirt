@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:51:15 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/07/14 16:26:18 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/14 17:33:44 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	**split_blank(char const *s);
 int		ft_splitcntt(char const *s);
-double	ft_atof(char const *nptr);
+double	ft_atof(const char *str);
 
 #endif // !LIBFT_H

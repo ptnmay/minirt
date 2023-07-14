@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/13 10:22:15 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/14 17:26:43 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ typedef struct s_ray
 typedef struct s_camera
 {
 	t_point	origin;
-	t_vec3	direction;
-	float	fov;
+	t_vec3	direction; //-1,1
+	float	fov; //0-180
 }	t_camera;
 
 typedef struct s_camera_plane
