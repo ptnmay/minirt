@@ -8,8 +8,8 @@ LIBFT_PATH = libft
 
 SRC =	minirt.c error.c	\
 		verify/verify_file.c verify/verify_0.c verify/verify_1.c \
-		verify/utils_verify01.c
-		
+		verify/utils_camera.c verify/utils0.c
+
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)

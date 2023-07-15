@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/15 20:42:10 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/16 01:37:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,5 +150,8 @@ void	verify_len(char **line, int len);
 
 void	util_c_dir(char *direction);
 void	util_c_ori(char **ori);
+
+int		str_is_digit(char **str);
+
 
 #endif
