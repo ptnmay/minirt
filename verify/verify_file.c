@@ -6,11 +6,11 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/13 09:50:41 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/15 20:54:40 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
+#include "../data.h"
 
 void	verify_len(char **line, int len)
 {

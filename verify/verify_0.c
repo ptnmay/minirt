@@ -6,11 +6,12 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/13 10:26:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/15 20:54:34 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
+#include "../data.h"
+
 
 void	verify_a(char **chop)
 {

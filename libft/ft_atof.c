@@ -6,21 +6,33 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 14:30:41 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/14 17:33:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/15 23:13:09 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+double	decimal(const char *str, double ans)
+{
+	double	dot;
+
+	dot = 0.1;
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		ans += (dot * (*str - '0'));
+		dot /= 10;
+		str++;
+	}
+	return (ans);
+}
+
 double	ft_atof(const char *str)
 {
 	double	ans;
 	double	neg;
-	double	dot;
 
 	ans = 0;
 	neg = 1;
-	dot = 0.1;
 	while ((*str == 32) || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
@@ -34,16 +46,8 @@ double	ft_atof(const char *str)
 		ans = ans * 10 + (*str - '0');
 		str++;
 	}
-	if (*str == '.')
-	{
-		str++;
-		while (*str && *str >= '0' && *str <= '9')
-		{
-			ans += (dot * (*str - '0'));
-			dot /= 10;
-			str++;
-		}
-	}
+	if (*str++ == '.')
+		ans = decimal(str, ans);
 	return (ans * neg);
 }
 
