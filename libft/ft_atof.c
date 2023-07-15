@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 14:30:41 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/15 23:13:09 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/16 04:17:11 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ double	ft_atof(const char *str)
 
 	ans = 0;
 	neg = 1;
-	while ((*str == 32) || (*str >= 9 && *str <= 13))
-		str++;
+	// while (ft_isspace(*str))
+	// 	str++;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:45:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/12 21:51:55 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/16 04:24:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ char	**split_blank(char const *s)
 	ft_zeroo(&i, &j, &len);
 	while (++i <= (int) ft_strlen(s))
 	{
-		while (s[j] == 32 || ((s[j] >= 9 && s[j] <= 13) && s[j]))
+		while (ft_isspace(s[j]) && s[j])
+		// while (s[j] == 32 || ((s[j] >= 9 && s[j] <= 13) && s[j]))
 			j++;
 		if (((s[i] == 32 || (s[i] >= 9 && s[i] <= 13) || !s[i]) &&
 		(s[i - 1] != 32 || (s[i - 1] >= 9 && s[i - 1] <= 13))) && i - j > 0)

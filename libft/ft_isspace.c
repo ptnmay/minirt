@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils0.c                                           :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/16 01:36:09 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/16 04:17:43 by psaeyang         ###   ########.fr       */
+/*   Created: 2023/07/16 03:43:09 by psaeyang          #+#    #+#             */
+/*   Updated: 2023/07/16 03:45:29 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../data.h"
+#include "libft.h"
 
-int	str_is_digit(char **str)
+int	ft_isspace(int c)
 {
-	size_t	i;
-	size_t	j;
-
-	i = -1;
-	while (str[++i])
-	{
-		j = 0;
-		// while (ft_isspace(str[i][j]))
-		// 	j++;
-		if (str[i][j] == '-' || str[i][j] == '+')
-			j++;
-		while (ft_isdigit(str[i][j]))
-			j++;
-		if (str[i][j] == '.')
-			j++;
-		while (ft_isdigit(str[i][j]))
-			j++;
-		if (ft_strlen(str[i]) != j)
-			return (0);
-	}
-	return (1);
+	return ((c >= 9 && c <= 13) || c == 32);
 }
