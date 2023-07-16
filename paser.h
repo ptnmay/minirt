@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 02:31:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 03:05:18 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ typedef struct s_camera_plane
 
 typedef struct s_ambient
 {
-	float	ratio;
-	int		color;
+	float	ratio; //0.0-1.0
+	int		color; //0-255
 }	t_ambient;
 
 typedef struct s_light
@@ -148,10 +148,16 @@ void	verify_pl(char **chop);
 void	verify_cy(char **chop);
 void	verify_len(char **line, int len);
 
+//utils_camera
 void	util_c_ori(char **origin);
 void	util_c_dir(char *direction);
 void	util_c_fov(char *fov);
 
+//utils_ambient
+void	util_ratio(char **ratio);
+void	util_color(char **color);
+
+//utils_0
 int		twod_is_decimal(char **str);
 int		str_is_digit(char *str);
 // int		str_is_decimal(char **str);
