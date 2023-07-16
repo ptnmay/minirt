@@ -6,13 +6,13 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 03:44:16 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 04:06:04 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../paser.h"
 
-void	util_c_dir(char *direction)
+void	util_dir(char *direction)
 {
 	if (direction[0] == '-')
 	{
@@ -26,7 +26,7 @@ void	util_c_dir(char *direction)
 	}
 }
 
-void	util_c_ori(char **origin)
+void	util_ori(char **origin)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ void	util_c_ori(char **origin)
 	}
 }
 
-void	util_c_fov(char *fov)
+void	util_fov(char *fov)
 {
 	int	i;
 

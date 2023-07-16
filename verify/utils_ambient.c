@@ -6,13 +6,13 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 02:40:50 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 03:43:15 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 04:18:55 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../paser.h"
 
-void	util_ratio(char **ratio)
+void	util_ratio_ambi(char **ratio)
 {
 	int	i;
 

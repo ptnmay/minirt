@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 03:05:18 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 04:25:11 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_ray
 
 typedef struct s_camera
 {
-	t_point	origin;
+	t_point	origin; //x,y,z
 	t_vec3	direction; //-1,1
 	float	fov; //0-180
 }	t_camera;
@@ -85,9 +85,9 @@ typedef struct s_ambient
 
 typedef struct s_light
 {
-	t_point	origin;
-	float	brightness;
-	int		color;
+	t_point	origin; //x,y,z
+	float	brightness; //0.0-1.0
+	int		color; //0-255 bonus
 }	t_light;
 
 typedef struct s_sphere
@@ -149,16 +149,20 @@ void	verify_cy(char **chop);
 void	verify_len(char **line, int len);
 
 //utils_camera
-void	util_c_ori(char **origin);
-void	util_c_dir(char *direction);
-void	util_c_fov(char *fov);
+void	util_ori(char **origin);
+void	util_dir(char *direction);
+void	util_fov(char *fov);
 
 //utils_ambient
-void	util_ratio(char **ratio);
+void	util_ratio_ambi(char **ratio);
 void	util_color(char **color);
+
+//utils_brightness
+void	util_ratio_light(char **brightness);
 
 //utils_0
 int		twod_is_decimal(char **str);
+int		twod_is_digit(char **str);
 int		str_is_digit(char *str);
 // int		str_is_decimal(char **str);
 

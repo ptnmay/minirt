@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 03:40:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 04:25:52 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,30 @@ void	verify_c(char **chop)
 	ori = ft_split(chop[1], ',');
 	dir = ft_split(chop[2], ',');
 	printf(BCYN"C ok\n"RESET); //del
-	util_c_ori(ori);
+	util_ori(ori);
 	printf(BCYN"ori num ok, len 3\n"RESET); //del
 	verify_len(dir, 3);
 	while (i != 3)
 	{
-		util_c_dir(dir[i]);
+		util_dir(dir[i]);
 		i++;
 	}
 	printf(BCYN"dir num ok, len 3\n"RESET); //del
 	verify_len(&chop[3], 1);
-	util_c_fov(chop[3]);
+	util_fov(chop[3]);
 	printf(BCYN"fov num ok, len 3\n"RESET); //del
 }
 
 void	verify_l(char **chop)
 {
-	verify_len(chop, 4);
+	char	**origin;
+
+	verify_len(chop, 3);
+	origin = ft_split(chop[1], ',');
 	printf(BCYN"L ok\n"RESET);
-	printf(BGRN"go check info\n\n"RESET);
+	util_ori(origin);
+	util_ratio_light(&chop[2]);
+	// printf(BGRN"go check info\n\n"RESET);
 }
 
 void	verify_sp(char **chop)
