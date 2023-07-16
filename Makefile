@@ -1,6 +1,6 @@
 NAME = minirt
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g #-fsanitize=address
+CC = gcc -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra 
 HEADER = minirt.h
 
 LIBFT = ./libft/libft.a

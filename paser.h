@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 01:25:33 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 02:31:36 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,10 +148,13 @@ void	verify_pl(char **chop);
 void	verify_cy(char **chop);
 void	verify_len(char **line, int len);
 
+void	util_c_ori(char **origin);
 void	util_c_dir(char *direction);
-void	util_c_ori(char **ori);
+void	util_c_fov(char *fov);
 
-int		str_is_digit(char **str);
+int		twod_is_decimal(char **str);
+int		str_is_digit(char *str);
+// int		str_is_decimal(char **str);
 
 
 #endif
