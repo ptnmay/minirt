@@ -6,11 +6,11 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/16 04:16:28 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 01:27:12 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../data.h"
+#include "../paser.h"
 
 void	verify_c(char **chop)
 {

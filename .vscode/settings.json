@@ -4,6 +4,7 @@
 		"ratio": "c",
 		"complex": "c",
 		"data.h": "c",
-		"sstream": "c"
+		"sstream": "c",
+		"paser.h": "c"
 	}
 }

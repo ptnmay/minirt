@@ -6,11 +6,11 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 01:36:09 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/16 04:17:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 01:27:20 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../data.h"
+#include "../paser.h"
 
 int	str_is_digit(char **str)
 {
