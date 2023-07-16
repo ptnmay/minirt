@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 02:21:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 03:40:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,9 @@ void	verify_c(char **chop)
 	verify_len(chop, 4);
 	ori = ft_split(chop[1], ',');
 	dir = ft_split(chop[2], ',');
-	
 	printf(BCYN"C ok\n"RESET); //del
-
 	util_c_ori(ori);
 	printf(BCYN"ori num ok, len 3\n"RESET); //del
-
 	verify_len(dir, 3);
 	while (i != 3)
 	{
@@ -35,11 +32,9 @@ void	verify_c(char **chop)
 		i++;
 	}
 	printf(BCYN"dir num ok, len 3\n"RESET); //del
-
 	verify_len(&chop[3], 1);
 	util_c_fov(chop[3]);
 	printf(BCYN"fov num ok, len 3\n"RESET); //del
-
 }
 
 void	verify_l(char **chop)

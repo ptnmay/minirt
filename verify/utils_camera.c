@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 02:34:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 03:44:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	util_c_dir(char *direction)
 	}
 }
 
-
 void	util_c_ori(char **origin)
 {
 	int	i;
@@ -35,9 +34,6 @@ void	util_c_ori(char **origin)
 	verify_len(origin, 3);
 	while (i < 3)
 	{
-		// if (ft_atof(ori[i]) == 0)
-		// 	error(BYEL"error ori num"RESET, 0);
-		// printf("%f\n", ft_atof(ori[i]));
 		if (twod_is_decimal(origin) == 0)
 			error(BYEL"not decimal or digit"RESET, 0);
 		i++;

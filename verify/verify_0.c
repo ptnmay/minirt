@@ -6,12 +6,11 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 03:05:31 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 03:39:54 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../paser.h"
-
 
 void	verify_a(char **chop)
 {
@@ -27,12 +26,6 @@ void	verify_a(char **chop)
 	color = ft_split(chop[2], ',');
 	verify_len(color, 3);
 	util_color(color);
-	// while (i < 3)
-	// {
-	// 	if (ft_atoi(color[i]) > 255 || color[i][0] == '-' || ft_strchr(color[i], '.') != NULL)
-	// 		error(BYEL"color not correct"RESET, 0);
-	// 	i++;
-	// }
 	printf(BCYN"color ok, ambi checked. all ok\n"RESET); //del
 	printf(BWHT"===============================\n"RESET);
 }
