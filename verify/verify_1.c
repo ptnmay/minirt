@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 04:25:52 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 05:10:47 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	verify_l(char **chop)
 	origin = ft_split(chop[1], ',');
 	printf(BCYN"L ok\n"RESET);
 	util_ori(origin);
-	util_ratio_light(&chop[2]);
+	util_ratio_light(chop);
 	// printf(BGRN"go check info\n\n"RESET);
 }
 

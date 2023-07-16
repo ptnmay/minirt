@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 02:40:50 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 04:18:55 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 05:25:13 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ void	util_ratio_ambi(char **ratio)
 	int	i;
 
 	i = 0;
-	if ((ratio[1][0] == '0' || ratio[1][0] == '1') && ratio[1][1] == '.' 
-	&& ft_strlen(ratio[1]) == 3)
+	if (ratio[1][0] == '0' || ratio[1][0] == '1')
 	{
-		while (ft_atoi(&ratio[1][2]) != i && i != 11)
-			i++;
-		if (i == 10 || (ratio[1][0] == '1' && ratio[1][2] != '0'))
-			error(BYEL"ratio not correct"RESET, 0);
+		if (twod_is_decimal(&ratio[1]) && ft_strlen(ratio[1]) == 3)
+		{
+			while (ft_atoi(&ratio[1][2]) != i && i != 11)
+				i++;
+			if (i == 10 || (ratio[1][0] == '1' && ratio[1][2] != '0'))
+				error(BYEL"ratio not correct"RESET, 0);
+		}
 	}
 	else
 		error(BYEL"ratio not correct"RESET, 0);
