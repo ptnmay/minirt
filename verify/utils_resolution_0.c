@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 16:06:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 21:04:37 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	util_ori(char **origin)
 			error(BYEL"not decimal or digit"RESET, 0);
 		i++;
 	}
+	printf(BCYN"ori num ok\n"RESET); //del
 }
 
 void	util_fov(char *fov)
@@ -54,6 +55,7 @@ void	util_fov(char *fov)
 		else if (str_is_digit(fov) == 0)
 			error(BYEL"connot be flaot number", 0);
 	}
+	printf(BCYN"fov num ok\n"RESET); //del
 }
 
 void	util_ratio(char **ratio, int index)
@@ -76,12 +78,13 @@ void	util_ratio(char **ratio, int index)
 	printf(BCYN"ratio ok next\n"RESET); //del
 }
 
-void	util_color(char **color)
+void	util_color(char **color, int len)
 {
 	int	i;
 
 	i = 0;
-	while (i < 3)
+	verify_len(color, len);
+	while (i < len)
 	{
 		if (twod_is_digit(color) == 0 || color[i][0] == '-' ||
 		ft_atoi(color[i]) > 255)
@@ -91,5 +94,7 @@ void	util_color(char **color)
 			error(BYEL"color not correct"RESET, 0);
 		}
 		i++;
+		len--;
 	}
+	printf(BCYN"color ok\n"RESET); //del
 }

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 19:10:29 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:46:49 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,21 +93,21 @@ typedef struct s_light
 typedef struct s_sphere
 {
 	t_point	center; //x,y,z
-	float	radius; //?
+	float	radius; //the sphere diameter
 	int		color; //0-255
 }	t_sphere;
 
 typedef struct s_plane
 {
-	t_point	center;
-	t_vec3	normal;
-	int		color;
+	t_point	center; //x,y,z
+	t_vec3	normal; //3d same direction -1,1
+	int		color; //0-255
 }	t_plane;
 
 typedef struct s_cylinder
 {
-	t_point	center;
-	t_vec3	normal;
+	t_point	center; //x,y,z
+	t_vec3	normal; //
 	float	radius;
 	float	height;
 	int		color;
@@ -153,7 +153,7 @@ void	util_ori(char **origin);
 void	util_dir(char *direction);
 void	util_fov(char *fov);
 void	util_ratio(char **ratio, int index);
-void	util_color(char **color);
+void	util_color(char **color, int len);
 
 //utils_resolution_1
 void	util_radius(char *radius);
