@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 15:21:31 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:10:05 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	verify_c(char **chop)
 	verify_len(&chop[3], 1);
 	util_fov(chop[3]);
 	printf(BCYN"fov num ok, len 3\n"RESET); //del
+	printf(BWHT"===============================\n"RESET); //del
 }
 
 void	verify_l(char **chop)
@@ -46,13 +47,19 @@ void	verify_l(char **chop)
 	printf(BCYN"L ok\n"RESET);
 	util_ori(origin);
 	util_ratio(chop, 2);
+	printf(BWHT"===============================\n"RESET); //del
 }
 
 void	verify_sp(char **chop)
 {
+	char	**center;
+
+	center = ft_split(chop[1], ',');
 	verify_len(chop, 4);
 	printf(BCYN"SP ok\n"RESET);
-	printf(BGRN"go check info\n\n"RESET);
+	util_ori(center);
+	util_radius(chop[2]);
+	printf(BWHT"===============================\n"RESET); //del
 }
 
 void	verify_pl(char **chop)
@@ -60,4 +67,5 @@ void	verify_pl(char **chop)
 	verify_len(chop, 4);
 	printf(BCYN"PL ok\n"RESET);
 	printf(BGRN"go check info\n\n"RESET);
+	printf(BWHT"===============================\n"RESET); //del
 }

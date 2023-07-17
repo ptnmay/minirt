@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 15:32:57 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 16:06:13 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void	util_dir(char *direction)
 	}
 	else
 	{
-		if (ft_atof(direction) > 1.0)
+		if (str_is_decimal(direction) == 0)
+			error(BYEL"dir not digit nor decimal", 0);
+		else if (ft_atof(direction) > 1.0)
 			error(BYEL"dir between -1.0 - 1.0", 0);
 	}
 }

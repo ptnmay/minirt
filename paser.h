@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 15:12:37 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:10:29 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ typedef struct s_light
 
 typedef struct s_sphere
 {
-	t_point	center;
-	float	radius;
-	int		color;
+	t_point	center; //x,y,z
+	float	radius; //?
+	int		color; //0-255
 }	t_sphere;
 
 typedef struct s_plane
@@ -138,8 +138,8 @@ typedef struct s_vars {
 }	t_vars;
 
 
-void	verify_file(char **av);
 void	error(char *s, int mode);
+void	verify_file(char **av);
 void	verify_a(char **chop);
 void	verify_c(char **chop);
 void	verify_l(char **chop);
@@ -148,24 +148,22 @@ void	verify_pl(char **chop);
 void	verify_cy(char **chop);
 void	verify_len(char **line, int len);
 
-//utils_camera
+//utils_resolution_0
 void	util_ori(char **origin);
 void	util_dir(char *direction);
 void	util_fov(char *fov);
-
-//utils_ambient
-void	util_ratio_ambi(char **ratio);
 void	util_ratio(char **ratio, int index);
 void	util_color(char **color);
 
-//utils_brightness
-void	util_ratio_light(char **brightness);
+//utils_resolution_1
+void	util_radius(char *radius);
+
 
 //utils_0
 int		twod_is_decimal(char **str);
 int		twod_is_digit(char **str);
 int		str_is_digit(char *str);
-// int		str_is_decimal(char **str);
+int		str_is_decimal(char *str);
 
 
 #endif
