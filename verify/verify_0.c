@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 04:19:22 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:27:40 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	verify_a(char **chop)
 	printf(BCYN"A ok\n"RESET); //del
 	printf(BRED"ratio --> %s\n"RESET, chop[1]);
 	printf(BRED"ratio len == %zu\n"RESET, ft_strlen(chop[1]));
-	util_ratio_ambi(chop);
+	util_ratio(chop, 1);
 	color = ft_split(chop[2], ',');
 	verify_len(color, 3);
 	util_color(color);

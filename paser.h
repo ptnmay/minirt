@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 04:25:11 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:12:37 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ void	util_fov(char *fov);
 
 //utils_ambient
 void	util_ratio_ambi(char **ratio);
+void	util_ratio(char **ratio, int index);
 void	util_color(char **color);
 
 //utils_brightness
