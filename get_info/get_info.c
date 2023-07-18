@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verify_0.c                                         :+:      :+:    :+:   */
+/*   get_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/18 15:36:32 by psaeyang         ###   ########.fr       */
+/*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
+/*   Updated: 2023/07/18 15:22:38 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../paser.h"
 
-void	verify_a(char **chop)
+int main()
 {
-	int		i;
-	char	**color;
-
-	i = 0;
-	verify_len(chop, 3);
-	printf(BCYN"A ok\n"RESET); //del
-	util_ratio(chop, 1);
-	color = ft_split(chop[2], ',');
-	util_color(color, 3);
-	printf(BGRN"ambi checked. all ok\n"RESET); //del
-	printf(BWHT"===============================\n"RESET); //del
-}
-
-void	verify_cy(char **chop)
-{
-	verify_len(chop, 6);
-	
-	printf(BCYN"CY ok\n"RESET); //del
+	printf("get info\n");
 }
