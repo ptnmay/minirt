@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 21:25:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:34:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	verify_c(char **chop)
 	dir = ft_split(chop[2], ',');
 	printf(BCYN"C ok\n"RESET); //del
 	util_ori(ori);
-	printf(BCYN"ori num ok, len 3\n"RESET); //del
 	verify_len(dir, 3);
 	while (i != 3)
 	{

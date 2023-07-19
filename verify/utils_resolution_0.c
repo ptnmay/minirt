@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/19 17:24:02 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:29:32 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ void	util_color(char **color, int len)
 			error(BYEL"color not correct"RESET, 0);
 		}
 		i++;
-		len--;
 	}
 	printf(BCYN"color ok\n"RESET); //del
 }
