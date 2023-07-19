@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 21:04:37 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:24:02 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ void	util_ori(char **origin)
 
 void	util_fov(char *fov)
 {
-	int	i;
-
-	i = 0;
 	if (str_is_digit(fov) == 0 || ((ft_atoi(fov) > 180 || ft_atoi(fov) < 0)))
 	{
 		if (ft_atoi(fov) < 0 || ft_atoi(fov) > 180)

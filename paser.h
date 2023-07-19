@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 20:46:49 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:18:43 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,10 @@ typedef struct s_plane
 typedef struct s_cylinder
 {
 	t_point	center; //x,y,z
-	t_vec3	normal; //
-	float	radius;
-	float	height;
-	int		color;
+	t_vec3	normal; //-1,1
+	float	radius; //decimal || digit
+	float	height; //de || di
+	int		color; //0-255
 }	t_cylinder;
 
 typedef enum e_obj_type
