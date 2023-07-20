@@ -5,6 +5,10 @@
 		"complex": "c",
 		"data.h": "c",
 		"sstream": "c",
-		"paser.h": "c"
+		"paser.h": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c",
+		"vector": "c"
 	}
 }

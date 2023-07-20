@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 06:20:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 01:26:09 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/21 04:27:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 int main(int ac, char **av)
 {
-	t_data	*data;
+	t_vars	*paser;
 
-	// data = NULL;
+	paser = NULL;
 	if (ac != 2)
 		error(BRED"wrong ac Σ(￣ロ￣lll)"RESET, 0);
 	verify_file(av);
-	data = malloc(sizeof(t_data));
-	(void)data;
+	// paser = malloc(sizeof(t_data));
+	paser = init();
+	// (void)data;
 	// data = get_info(av[1]);
 }
 
