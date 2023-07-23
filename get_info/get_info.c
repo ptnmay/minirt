@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 02:18:54 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:52:01 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	get_line(char *line, t_vars *paser)
 		go_get_a(chop, paser);
 	else if (chop[0][0] == 'C')
 		go_get_c(chop, paser);
-	// else if (chop[0][0] == 'L')
-	// 	go_get_l(chop, paser);
+	else if (chop[0][0] == 'L')
+		go_get_l(chop, paser);
 	// else if (chop[0][0] == 's' && chop[0][1] == 'p')
 	// 	go_get_sp(chop, paser);
 	// else if (chop[0][0] == 'p' && chop[0][1] == 'l')

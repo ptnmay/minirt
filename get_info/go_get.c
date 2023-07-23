@@ -6,11 +6,26 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 22:56:46 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 02:34:54 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:01:32 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../paser.h"
+
+void	go_get_l(char **chop, t_vars *paser)
+{
+	t_light	*light;
+	char	**split;
+
+	light = malloc(sizeof(t_light));
+	split = ft_split(chop[1], ',');
+	get_decimal(split[0], &light->origin.x);
+	get_decimal(split[1], &light->origin.y);
+	get_decimal(split[2], &light->origin.z);
+	erase_split(split);
+	get_decimal(chop[2], &light->brightness);
+	paser->light = *light;
+}
 
 void	go_get_c(char **chop, t_vars *paser)
 {
@@ -28,7 +43,7 @@ void	go_get_c(char **chop, t_vars *paser)
 	get_decimal(split[1], &camera->direction.y);
 	get_decimal(split[2], &camera->direction.z);
 	erase_split(split);
-	
+	get_decimal(chop[3], &camera->fov);
 	paser->camera = *camera;
 }
 

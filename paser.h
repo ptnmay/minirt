@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 02:16:56 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:58:46 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,15 @@ typedef struct s_camera
 {
 	t_point	origin; //x,y,z
 	t_vec3	direction; //-1,1
-	float	fov; //0-180
+	double	fov; //0-180
 }	t_camera;
 
 typedef struct s_camera_plane
 {
 	t_point	center;
 	t_vec3	normal;
-	float	width;
-	float	height;
+	double	width;
+	double	height;
 	t_vec3	right;
 	t_vec3	down;
 	t_point	top_left;
@@ -86,14 +86,14 @@ typedef struct s_ambient
 typedef struct s_light
 {
 	t_point	origin; //x,y,z
-	float	brightness; //0.0-1.0
+	double	brightness; //0.0-1.0
 	int		color; //0-255 bonus
 }	t_light;
 
 typedef struct s_sphere
 {
 	t_point	center; //x,y,z
-	float	radius; //the sphere diameter
+	double	radius; //the sphere diameter
 	int		color; //0-255
 }	t_sphere;
 
@@ -108,8 +108,8 @@ typedef struct s_cylinder
 {
 	t_point	center; //x,y,z
 	t_vec3	normal; //-1,1
-	float	radius; //decimal || digit
-	float	height; //de || di
+	double	radius; //decimal || digit
+	double	height; //de || di
 	int		color; //0-255
 }	t_cylinder;
 
@@ -172,6 +172,7 @@ void	get_line(char *line, t_vars *paser);
 //go_get
 void	go_get_a(char **chop, t_vars *paser);
 void	go_get_c(char **chop, t_vars *paser);
+void	go_get_l(char **chop, t_vars *paser);
 
 //utils_get
 double	*get_decimal(char *dec, double *decimal);
