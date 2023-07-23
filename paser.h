@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 05:12:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 05:36:09 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,8 +188,9 @@ void	go_get_pl(char **chop, t_vars *paser);
 void	go_get_cy(char **chop, t_vars *paser);
 
 //utils_get
-double	*get_decimal(char *dec, double *decimal);
 int		*get_digit(char *digit, int	*color);
+double	*get_decimal(char *dec, double *decimal);
+void	get_color(char **colour, t_color *color);
 
 //print_test
 void	print_ambi(t_vars *paser);

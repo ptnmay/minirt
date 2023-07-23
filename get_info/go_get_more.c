@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 04:36:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 05:13:41 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 05:38:47 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ void	go_get_cy(char **chop, t_vars *paser)
 	get_decimal(chop[3], &cy->radius);
 	get_decimal(chop[4], &cy->height);
 	split = ft_split(chop[5], ',');
-	get_digit(split[0], &cy->color.x);
-	get_digit(split[1], &cy->color.y);
-	get_digit(split[2], &cy->color.z);
-	erase_split(split);
+	get_color(split, &cy->color);
+	// get_digit(split[0], &cy->color.x);
+	// get_digit(split[1], &cy->color.y);
+	// get_digit(split[2], &cy->color.z);
+	// erase_split(split);
 	paser->cy = cy;
 }
 
@@ -55,9 +56,31 @@ void	go_get_pl(char **chop, t_vars *paser)
 	get_decimal(split[2], &plane->normal.z);
 	erase_split(split);
 	split = ft_split(chop[3], ',');
-	get_digit(split[0], &plane->color.x);
-	get_digit(split[1], &plane->color.y);
-	get_digit(split[2], &plane->color.z);
-	erase_split(split);
+	get_color(split, &plane->color);
+	// get_digit(split[0], &plane->color.x);
+	// get_digit(split[1], &plane->color.y);
+	// get_digit(split[2], &plane->color.z);
+	// erase_split(split);
 	paser->pl = plane;
+}
+
+void	go_get_sp(char **chop, t_vars *paser)
+{
+	t_sphere	*sphere;
+	char		**split;
+
+	sphere = malloc(sizeof(t_sphere));
+	split = ft_split(chop[1], ',');
+	get_decimal(split[0], &sphere->center.x);
+	get_decimal(split[1], &sphere->center.y);
+	get_decimal(split[2], &sphere->center.z);
+	erase_split(split);
+	get_decimal(chop[2], &sphere->radius);
+	split = ft_split(chop[3], ',');
+	get_color(split, &sphere->color);
+	// get_digit(split[0], &sphere->color.x);
+	// get_digit(split[1], &sphere->color.y);
+	// get_digit(split[2], &sphere->color.z);
+	// erase_split(split);
+	paser->sp = sphere;
 }
