@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 05:36:09 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 06:09:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,8 +147,11 @@ typedef struct s_vars {
 	t_cylinder	*cy;
 }	t_vars;
 
+//error
 void	erase_split(char **av);
-void	error(char *s, int mode);
+void	free_error(char *s, char **free);
+void	error(char *s);
+
 void	verify_file(char **av);
 void	verify_a(char **chop);
 void	verify_c(char **chop);
@@ -191,6 +194,8 @@ void	go_get_cy(char **chop, t_vars *paser);
 int		*get_digit(char *digit, int	*color);
 double	*get_decimal(char *dec, double *decimal);
 void	get_color(char **colour, t_color *color);
+void	get_point(char **xyz, t_point *pos);
+void	get_vec3(char **xyz, t_vec3 *pos);
 
 //print_test
 void	print_ambi(t_vars *paser);

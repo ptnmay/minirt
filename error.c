@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:08:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 05:08:14 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 06:13:38 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,14 @@ void	erase_split(char **av)
 	free(av);
 }
 
-void	error(char *s, int mode)
+void	free_error(char *s, char **free)
 {
-	// int	i;
-	// int	j;
-	// i = 0;
-	// j = 0;
+	erase_split(free);
+	error(s);
+}
+
+void	error(char *s)
+{
 	ft_putendl_fd(s, 2);
-	if (mode == 0)
 		exit(0);
-	// else if (mode == 1)
-	// {
-	// 	while(str[i])
-	// 	{
-	// 		// while(str[i][j])
-	// 		// {
-	// 		// 	free(str[i][j]);
-	// 		// 	j++;
-	// 		// }
-	// 		free(str[i]);
-	// 		i++;
-	// 	}
-	// 	exit(0);
-	// }
 }

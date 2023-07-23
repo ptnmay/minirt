@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 03:51:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 06:10:21 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	verify_len(char **line, int len)
 	while (line[i])
 		i++;
 	if (i != len)
-		error(BYEL"--len not correct--"RESET, 0);
+		free_error(BYEL"--len not correct--"RESET, line);
 	printf(BMAG"--len correct--\n"RESET);
 }
 
@@ -42,7 +42,7 @@ void	verify_line(char *line)
 	else if (chopchop[0][0] == 'c' && chopchop[0][1] == 'y')
 		verify_cy(chopchop);
 	else
-		error(BRED"info wrong"RESET, 0);
+		free_error(BRED"info wrong"RESET, chopchop);
 }
 
 void	goinfile(int fd)
@@ -54,7 +54,7 @@ void	goinfile(int fd)
 	i = 0;
 	gotline = get_next_line(fd);
 	if (gotline == NULL)
-		error(BRED"cannot get_line"RESET, 0);
+		error(BRED"cannot get_line"RESET);
 	cnt = ft_splitcntt(gotline);
 	while (gotline && i < cnt)
 	{
@@ -74,13 +74,13 @@ void	verify_file(char **av)
 
 	rt = ft_strrchr(av[1], '.');
 	if (!(rt && ft_strncmp(ft_strrchr(av[1], '.'), ".rt", 4) == 0))
-		error(BRED"file not correct Σ(￣ロ￣lll)"RESET, 0);
+		error(BRED"file not correct Σ(￣ロ￣lll)"RESET);
 	else
 	{
 		printf(BBLU"file .rt correct (─‿‿─)\n"RESET);
 		fd = open(av[1], O_RDONLY);
 		if (fd < 0)
-			error(BRED"cannot open file Σ(￣ロ￣lll)"RESET, 0);
+			error(BRED"cannot open file Σ(￣ロ￣lll)"RESET);
 		goinfile(fd);
 		close(fd);
 	}

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 02:41:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 06:13:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	util_dir(char *direction)
 	if (direction[0] == '-')
 	{
 		if (direction[1] != '1' || (direction[2] == '.' && direction[3] != '0'))
-			error(BYEL"dir between -1.0 - 1.0", 0);
+			error(BYEL"dir between -1.0 - 1.0");
 	}
 	else
 	{
 		if (str_is_decimal(direction) == 0)
-			error(BYEL"dir not digit nor decimal", 0);
+			error(BYEL"dir not digit nor decimal");
 		else if (ft_atof(direction) > 1.0)
-			error(BYEL"dir between -1.0 - 1.0", 0);
+			error(BYEL"dir between -1.0 - 1.0");
 	}
 }
 
@@ -37,7 +37,7 @@ void	util_ori(char **origin)
 	while (i < 3)
 	{
 		if (twod_is_decimal(origin) == 0)
-			error(BYEL"not decimal or digit"RESET, 0);
+			error(BYEL"not decimal or digit"RESET);
 		i++;
 	}
 	printf(BCYN"ori num ok\n"RESET); //del
@@ -48,9 +48,9 @@ void	util_fov(char *fov)
 	if (str_is_decimal(fov) == 0 || ((ft_atof(fov) > 180 || ft_atof(fov) < 0)))
 	{
 		if (ft_atof(fov) < 0 || ft_atof(fov) > 180)
-			error(BYEL"only 0-180", 0);
+			error(BYEL"only 0-180");
 		else if (str_is_decimal(fov) == 0)
-			error(BYEL"not number", 0);
+			error(BYEL"not number");
 	}
 	printf(BCYN"fov num ok\n"RESET); //del
 }
@@ -67,11 +67,11 @@ void	util_ratio(char **ratio, int index)
 			while (ft_atoi(&ratio[index][2]) != i && i != 11)
 				i++;
 			if (i == 10 || (ratio[index][0] == '1' && ratio[index][2] != '0'))
-				error(BYEL"ratio not correct"RESET, 0);
+				free_error(BYEL"ratio not correct"RESET, ratio);
 		}
 	}
 	else
-		error(BYEL"ratio not correct"RESET, 0);
+		free_error(BYEL"ratio not correct"RESET, ratio);
 	printf(BCYN"ratio ok next\n"RESET); //del
 }
 
@@ -87,8 +87,8 @@ void	util_color(char **color, int len)
 		ft_atoi(color[i]) > 255)
 		{
 			if (color[i][0] == '-' || ft_atoi(color[i]) > 255)
-				error(BYEL"color only 0-255"RESET, 0);
-			error(BYEL"color not correct"RESET, 0);
+				free_error(BYEL"color only 0-255"RESET, color);
+			free_error(BYEL"color not correct"RESET, color);
 		}
 		i++;
 	}

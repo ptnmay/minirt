@@ -6,11 +6,27 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 23:33:03 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 05:40:35 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 05:59:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../paser.h"
+
+void	get_vec3(char **xyz, t_vec3 *pos)
+{
+	pos->x = ft_atof(xyz[0]);
+	pos->y = ft_atof(xyz[1]);
+	pos->z = ft_atof(xyz[2]);
+	erase_split(xyz);
+}
+
+void	get_point(char **xyz, t_point *pos)
+{
+	pos->x = ft_atof(xyz[0]);
+	pos->y = ft_atof(xyz[1]);
+	pos->z = ft_atof(xyz[2]);
+	erase_split(xyz);
+}
 
 void	get_color(char **colour, t_color *color)
 {

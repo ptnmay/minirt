@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/19 17:23:21 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 06:14:37 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	verify_a(char **chop)
 	util_ratio(chop, 1);
 	color = ft_split(chop[2], ',');
 	util_color(color, 3);
+	erase_split(color);
 	printf(BGRN"ambi checked. all ok\n"RESET); //del
 	printf(BWHT"===============================\n"RESET); //del
 }
