@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:00 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/19 17:29:32 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:41:13 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ void	util_ori(char **origin)
 
 void	util_fov(char *fov)
 {
-	if (str_is_digit(fov) == 0 || ((ft_atoi(fov) > 180 || ft_atoi(fov) < 0)))
+	if (str_is_decimal(fov) == 0 || ((ft_atof(fov) > 180 || ft_atof(fov) < 0)))
 	{
-		if (ft_atoi(fov) < 0 || ft_atoi(fov) > 180)
+		if (ft_atof(fov) < 0 || ft_atof(fov) > 180)
 			error(BYEL"only 0-180", 0);
-		else if (str_is_digit(fov) == 0)
-			error(BYEL"connot be flaot number", 0);
+		else if (str_is_decimal(fov) == 0)
+			error(BYEL"not number", 0);
 	}
 	printf(BCYN"fov num ok\n"RESET); //del
 }

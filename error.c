@@ -6,11 +6,24 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:08:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 01:26:32 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:16:46 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "paser.h"
+
+void	erase_split(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
+}
 
 void	error(char *s, int mode)
 {

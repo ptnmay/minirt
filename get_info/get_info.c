@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 01:25:35 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:18:54 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@ void	get_line(char *line, t_vars *paser)
 	chop = split_blank(line);
 	if (chop[0][0] == 'A')
 		go_get_a(chop, paser);
-	printf("get_line == %f\n", paser->ambient.ratio);
-	// else if (chop[0][0] == 'C')
-	// 	go_get_c(chop, &paser);
+	else if (chop[0][0] == 'C')
+		go_get_c(chop, paser);
 	// else if (chop[0][0] == 'L')
-	// 	go_get_l(chop, &paser);
+	// 	go_get_l(chop, paser);
 	// else if (chop[0][0] == 's' && chop[0][1] == 'p')
-	// 	go_get_sp(chop, &paser);
+	// 	go_get_sp(chop, paser);
 	// else if (chop[0][0] == 'p' && chop[0][1] == 'l')
-	// 	go_get_pl(chop, &paser);
+	// 	go_get_pl(chop, paser);
 	// else if (chop[0][0] == 'c' && chop[0][1] == 'y')
-	// 	go_get_cy(chop, &paser);
+	// 	go_get_cy(chop, paser);
 }
 
 void	get_info(t_vars *paser, char *av)
@@ -43,7 +42,7 @@ void	get_info(t_vars *paser, char *av)
 	fd = open(av, O_RDONLY);
 	line = get_next_line(fd);
 	cnt = ft_splitcntt(line);
-	while (line && i < cnt)
+	while (line != NULL && i < cnt)
 	{
 		get_line(line, paser);
 		i++;

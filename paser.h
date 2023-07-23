@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 01:20:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:16:56 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ typedef struct s_vars {
 	t_list			*obj_list;
 }	t_vars;
 
-
+void	erase_split(char **av);
 void	error(char *s, int mode);
 void	verify_file(char **av);
 void	verify_a(char **chop);
@@ -171,8 +171,10 @@ void	get_line(char *line, t_vars *paser);
 
 //go_get
 void	go_get_a(char **chop, t_vars *paser);
+void	go_get_c(char **chop, t_vars *paser);
 
 //utils_get
 double	*get_decimal(char *dec, double *decimal);
+int		*get_digit(char *digit, int	*color);
 
 #endif

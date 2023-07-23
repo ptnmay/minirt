@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 01:36:09 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 21:12:33 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 02:40:56 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int	str_is_decimal(char *str)
 		i++;
 	}
 	return (1);
-
 }
 
 int	twod_is_digit(char **str)
