@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 06:20:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/21 04:27:27 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 01:20:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,12 @@ int main(int ac, char **av)
 	if (ac != 2)
 		error(BRED"wrong ac Σ(￣ロ￣lll)"RESET, 0);
 	verify_file(av);
-	// paser = malloc(sizeof(t_data));
-	paser = init();
-	// (void)data;
-	// data = get_info(av[1]);
+	paser = malloc(sizeof(t_vars));
+	get_info(paser, av[1]);
+	printf("paser->ambient.ratio == %f\n", paser->ambient.ratio);
+	
 }
 
-
-
-	//check ac == 2; *
-	//check file .rt; *
-		//check len av[i] < 6 or 5?;
-		//check av[0 - 5] == A, C, L, pl, sp, cy;
-		//check av[0][i] is
-		//check av[1][i] is
-		//check av[2][i] is
-		//check av[3][i] is
-		//check av[4][i] is
-		//check av[5][i] is
 	//if check ok -> split to struct
 		//struct for A -> av[0]
 		//struct for C -> av[1]

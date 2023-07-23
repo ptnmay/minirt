@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/17 03:41:56 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/23 22:53:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	goinfile(int fd)
 	{
 		verify_line(gotline);
 		i++;
+		free(gotline); //add
 		gotline = get_next_line(fd);
 		cnt = ft_splitcntt(gotline);
 		i = 0;

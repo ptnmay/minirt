@@ -6,13 +6,50 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/18 15:22:38 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 01:25:35 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../paser.h"
 
-int main()
+void	get_line(char *line, t_vars *paser)
 {
-	printf("get info\n");
+	char	**chop;
+	
+	chop = split_blank(line);
+	if (chop[0][0] == 'A')
+		go_get_a(chop, paser);
+	printf("get_line == %f\n", paser->ambient.ratio);
+	// else if (chop[0][0] == 'C')
+	// 	go_get_c(chop, &paser);
+	// else if (chop[0][0] == 'L')
+	// 	go_get_l(chop, &paser);
+	// else if (chop[0][0] == 's' && chop[0][1] == 'p')
+	// 	go_get_sp(chop, &paser);
+	// else if (chop[0][0] == 'p' && chop[0][1] == 'l')
+	// 	go_get_pl(chop, &paser);
+	// else if (chop[0][0] == 'c' && chop[0][1] == 'y')
+	// 	go_get_cy(chop, &paser);
+}
+
+void	get_info(t_vars *paser, char *av)
+{
+	int			fd;
+	int			i;
+	char		*line;
+	static int	cnt;
+
+	i = 0;
+	fd = open(av, O_RDONLY);
+	line = get_next_line(fd);
+	cnt = ft_splitcntt(line);
+	while (line && i < cnt)
+	{
+		get_line(line, paser);
+		i++;
+		free(line);
+		line = get_next_line(fd);
+		cnt = ft_splitcntt(line);
+		i = 0;
+	}
 }

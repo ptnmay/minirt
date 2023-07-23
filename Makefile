@@ -10,7 +10,7 @@ SRC =	minirt.c error.c	\
 		verify/verify_file.c verify/verify_0.c verify/verify_1.c \
 		verify/utils0.c \
 		verify/utils_resolution_0.c verify/utils_resolution_1.c \
-		#get_info/get_info
+		get_info/get_info.c get_info/go_get.c
 
 
 OBJ = $(SRC:.c=.o)
