@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 02:38:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 05:14:04 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	verify_c(char **chop)
 	dir = ft_split(chop[2], ',');
 	printf(BCYN"C ok\n"RESET); //del
 	util_ori(ori);
-	// verify_len(dir, 3);
 	while (i != 3)
 	{
 		util_dir(dir[i]);

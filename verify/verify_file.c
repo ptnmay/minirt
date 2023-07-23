@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 03:03:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:51:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ void	goinfile(int fd)
 	cnt = ft_splitcntt(gotline);
 	while (gotline && i < cnt)
 	{
-		printf("%s\n", gotline);
-		printf("%d %d\n", i, cnt);
 		verify_line(gotline);
 		i++;
 		free(gotline); //add

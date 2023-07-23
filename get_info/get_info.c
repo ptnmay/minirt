@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 02:52:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 04:51:38 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	get_line(char *line, t_vars *paser)
 		go_get_c(chop, paser);
 	else if (chop[0][0] == 'L')
 		go_get_l(chop, paser);
-	// else if (chop[0][0] == 's' && chop[0][1] == 'p')
-	// 	go_get_sp(chop, paser);
-	// else if (chop[0][0] == 'p' && chop[0][1] == 'l')
-	// 	go_get_pl(chop, paser);
-	// else if (chop[0][0] == 'c' && chop[0][1] == 'y')
-	// 	go_get_cy(chop, paser);
+	else if (chop[0][0] == 's' && chop[0][1] == 'p')
+		go_get_sp(chop, paser);
+	else if (chop[0][0] == 'p' && chop[0][1] == 'l')
+		go_get_pl(chop, paser);
+	else if (chop[0][0] == 'c' && chop[0][1] == 'y')
+		go_get_cy(chop, paser);
 }
 
 void	get_info(t_vars *paser, char *av)

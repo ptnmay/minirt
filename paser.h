@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 02:58:46 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 05:12:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 # include "./libft/libft.h"
 # include "color.h"
 
+typedef struct s_color
+{
+	int	x;
+	int	y;
+	int	z;
+}				t_color;
 
 typedef struct s_point
 {
@@ -80,28 +86,28 @@ typedef struct s_camera_plane
 typedef struct s_ambient
 {
 	double	ratio; //0.0-1.0
-	int		color; //0-255
+	t_color		color; //0-255
 }	t_ambient;
 
 typedef struct s_light
 {
 	t_point	origin; //x,y,z
 	double	brightness; //0.0-1.0
-	int		color; //0-255 bonus
+	t_color		color; //0-255 bonus
 }	t_light;
 
 typedef struct s_sphere
 {
 	t_point	center; //x,y,z
 	double	radius; //the sphere diameter
-	int		color; //0-255
+	t_color		color; //0-255
 }	t_sphere;
 
 typedef struct s_plane
 {
 	t_point	center; //x,y,z
 	t_vec3	normal; //3d same direction -1,1
-	int		color; //0-255
+	t_color		color; //0-255
 }	t_plane;
 
 typedef struct s_cylinder
@@ -110,7 +116,7 @@ typedef struct s_cylinder
 	t_vec3	normal; //-1,1
 	double	radius; //decimal || digit
 	double	height; //de || di
-	int		color; //0-255
+	t_color		color; //0-255
 }	t_cylinder;
 
 typedef enum e_obj_type
@@ -135,6 +141,10 @@ typedef struct s_vars {
 	t_light			light;
 	t_ambient		ambient;
 	t_list			*obj_list;
+	//for print
+	t_sphere	*sp;
+	t_plane		*pl;
+	t_cylinder	*cy;
 }	t_vars;
 
 void	erase_split(char **av);
@@ -173,9 +183,21 @@ void	get_line(char *line, t_vars *paser);
 void	go_get_a(char **chop, t_vars *paser);
 void	go_get_c(char **chop, t_vars *paser);
 void	go_get_l(char **chop, t_vars *paser);
+void	go_get_sp(char **chop, t_vars *paser);
+void	go_get_pl(char **chop, t_vars *paser);
+void	go_get_cy(char **chop, t_vars *paser);
 
 //utils_get
 double	*get_decimal(char *dec, double *decimal);
 int		*get_digit(char *digit, int	*color);
+
+//print_test
+void	print_ambi(t_vars *paser);
+void	print_camera(t_vars *paser);
+void	print_light(t_vars *paser);
+void	print_sp(t_vars *paser);
+void	print_pl(t_vars *paser);
+void	print_cy(t_vars *paser);
+
 
 #endif
