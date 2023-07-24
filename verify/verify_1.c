@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 05:14:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:19:41 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	verify_c(char **chop)
 	}
 	verify_len(&chop[3], 1);
 	util_fov(chop[3]);
+	erase_split(ori);
+	erase_split(dir);
 	printf(BGRN"camera checked. all ok\n"RESET); //del
 	printf(BWHT"===============================\n"RESET); //del
 }
@@ -44,6 +46,7 @@ void	verify_l(char **chop)
 	printf(BCYN"L ok\n"RESET);
 	util_ori(origin);
 	util_ratio(chop, 2);
+	erase_split(origin);
 	printf(BGRN"light checked. all ok\n"RESET); //del
 	printf(BWHT"===============================\n"RESET); //del
 }
@@ -60,6 +63,8 @@ void	verify_sp(char **chop)
 	util_ori(center);
 	util_radius(chop[2]);
 	util_color(color, 3);
+	erase_split(center);
+	erase_split(color);
 	printf(BGRN"sph checked. all ok\n"RESET); //del
 	printf(BWHT"===============================\n"RESET); //del
 }
@@ -86,6 +91,9 @@ void	verify_pl(char **chop)
 	}
 	printf(BCYN"dir num ok\n"RESET); //del
 	util_color(color, 3);
+	erase_split(center);
+	erase_split(normal);
+	erase_split(color);
 	printf(BGRN"sph checked, all ok\n"RESET); //del
 	printf(BWHT"===============================\n"RESET); //del
 }

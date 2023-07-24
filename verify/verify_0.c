@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 06:14:37 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:19:52 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void	verify_cy(char **chop)
 	util_radius(chop[3]); //radius
 	util_radius(chop[4]); //height
 	util_color(color, 3);
+	erase_split(center);
+	erase_split(normal);
+	erase_split(color);
 	printf(BGRN"cylinder checked. all ok\n"RESET); //del
 	printf(BWHT"===============================\n"RESET); //del
 }

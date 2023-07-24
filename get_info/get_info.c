@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 06:23:02 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:24:20 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	get_line(char *line, t_vars *paser)
 		go_get_pl(chop, paser);
 	else if (chop[0][0] == 'c' && chop[0][1] == 'y')
 		go_get_cy(chop, paser);
-	// erase_split(chop);
+	// erase_split(chop); wrong
 }
 
 void	get_info(t_vars *paser, char *av)
@@ -46,10 +46,12 @@ void	get_info(t_vars *paser, char *av)
 	while (line != NULL && i < cnt)
 	{
 		get_line(line, paser);
-		i++;
 		free(line);
+		i++;
 		line = get_next_line(fd);
 		cnt = ft_splitcntt(line);
 		i = 0;
 	}
+	free(line);
+	
 }
