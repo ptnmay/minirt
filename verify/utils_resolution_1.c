@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 02:40:50 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/19 17:24:14 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 22:29:56 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	util_radius(char *radius)
 {
 	if (!str_is_decimal(radius) && ft_strlen(radius) != 1)
-		error(BYEL"radius not correct"RESET, 0);
+		error(BYEL"radius not correct"RESET);
 	printf(BCYN"radius ok next\n"RESET); //del
 }

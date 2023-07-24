@@ -6,7 +6,15 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:32:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/19 17:32:57 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 22:56:52 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../paser.h"
+
+int	i_c_comment(char *chopchop)
+{
+	if (ft_strchr(chopchop, '#') != NULL)
+		return (1);
+	return (0);
+}

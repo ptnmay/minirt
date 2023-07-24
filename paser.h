@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 06:09:14 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/24 22:51:54 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,7 @@ void	verify_sp(char **chop);
 void	verify_pl(char **chop);
 void	verify_cy(char **chop);
 void	verify_len(char **line, int len);
+int		i_c_comment(char *chopchop);
 
 //utils_resolution_0
 void	util_ori(char **origin);

@@ -1,5 +1,5 @@
 NAME = minirt
-CC = gcc #-g -fsanitize=address
+CC = gcc -g -fsanitize=address
 CFLAGS = -Wall -Werror -Wextra
 HEADER = minirt.h
 
@@ -8,7 +8,7 @@ LIBFT_PATH = libft
 
 SRC =	minirt.c error.c print_test.c	\
 		verify/verify_file.c verify/verify_0.c verify/verify_1.c \
-		verify/utils0.c \
+		verify/utils0.c verify/i_c_comment.c \
 		verify/utils_resolution_0.c verify/utils_resolution_1.c \
 		get_info/get_info.c get_info/go_get.c get_info/go_get_more.c \
 		get_info/utils_get.c
