@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 22:56:46 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/25 05:14:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/26 02:51:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void	go_get_a(char **chop, t_vars *paser)
 	get_decimal(chop[1], &ambi->ratio);
 	get_color(split, &ambi->color);
 	erase_split(chop);
+	erase_split(split);
 	paser->ambient = *ambi;
 }

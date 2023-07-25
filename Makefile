@@ -1,5 +1,5 @@
 NAME = minirt
-CC = gcc -g -fsanitize=address
+CC = gcc -g #-fsanitize=address
 CFLAGS = -Wall -Werror -Wextra
 HEADER = minirt.h
 

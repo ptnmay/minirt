@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 06:20:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/25 05:16:41 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/26 02:51:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int ac, char **av)
 	verify_file(av);
 	paser = malloc(sizeof(t_vars));
 	get_info(paser, av[1]);
+	// free(paser->ambient);
 	free(paser);
 	//create ft free all struct
 	// print_ambi(paser);
