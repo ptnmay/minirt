@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 22:56:46 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 10:35:19 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/28 03:48:31 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	go_get_c(char **chop, t_vars *paser)
 	camera = malloc(sizeof(t_camera));
 	split = ft_split(chop[1], ',');
 	get_point(split, &camera->origin);
+	erase_split(split);
 	split = ft_split(chop[2], ',');
 	get_vec3(split, &camera->direction);
 	get_decimal(chop[3], &camera->fov);

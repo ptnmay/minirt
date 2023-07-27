@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/28 02:46:31 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/28 03:36:25 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ typedef struct s_ambient
 {
 	double		ratio; //0.0-1.0
 	t_color		color; //0-255
-	int			cnt;
 }	t_ambient;
 
 typedef struct s_light
@@ -95,7 +94,6 @@ typedef struct s_light
 	t_point		origin; //x,y,z
 	double		brightness; //0.0-1.0
 	t_color		color; //0-255 bonus
-	int			cnt;
 }	t_light;
 
 typedef struct s_sphere

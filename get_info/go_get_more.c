@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 04:36:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/28 01:13:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/28 03:51:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ void	go_get_cy(char **chop, t_vars *paser)
 	cy = malloc(sizeof(t_cylinder));
 	split = ft_split(chop[1], ',');
 	get_point(split, &cy->center);
+	erase_split(split);
 	split = ft_split(chop[2], ',');
 	get_vec3(split, &cy->normal);
+	erase_split(split);
 	get_decimal(chop[3], &cy->radius);
 	get_decimal(chop[4], &cy->height);
 	split = ft_split(chop[5], ',');
@@ -52,8 +54,10 @@ void	go_get_pl(char **chop, t_vars *paser)
 	plane = malloc(sizeof(t_plane));
 	split = ft_split(chop[1], ',');
 	get_point(split, &plane->center);
+	erase_split(split);
 	split = ft_split(chop[2], ',');
 	get_vec3(split, &plane->normal);
+	erase_split(split);
 	split = ft_split(chop[3], ',');
 	get_color(split, &plane->color);
 	obj->type = PLANE;
@@ -80,10 +84,10 @@ void	go_get_sp(char **chop, t_vars *paser)
 	sphere = malloc(sizeof(t_sphere));
 	split = ft_split(chop[1], ',');
 	get_point(split, &sphere->center);
+	erase_split(split);
 	get_decimal(chop[2], &sphere->radius);
 	split = ft_split(chop[3], ',');
 	get_color(split, &sphere->color);
-	// erase_split(split);
 	obj->type = SPHERE;
 	obj->obj = sphere;
 	ft_lstadd_back(&paser->obj_list, ft_lstnew(obj));
