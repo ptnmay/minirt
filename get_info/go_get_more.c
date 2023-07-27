@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 04:36:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 08:37:24 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 09:17:39 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	go_get_cy(char **chop, t_vars *paser)
 {
 	t_cylinder	*cy;
+	t_obj		*obj;
 	char		**split;
 
+	obj = malloc(sizeof(t_obj));
 	cy = malloc(sizeof(t_cylinder));
 	split = ft_split(chop[1], ',');
 	get_point(split, &cy->center);
@@ -26,14 +28,20 @@ void	go_get_cy(char **chop, t_vars *paser)
 	get_decimal(chop[4], &cy->height);
 	split = ft_split(chop[5], ',');
 	get_color(split, &cy->color);
-	paser->cy = cy;
+	obj->type = CYLINDER;
+	obj->obj = cy;
+	ft_lstadd_back(&paser->obj_list, ft_lstnew(obj));
+	erase_split(split);
+	// paser->cy = cy;
 }
 
 void	go_get_pl(char **chop, t_vars *paser)
 {
 	t_plane	*plane;
+	t_obj		*obj;
 	char	**split;
 
+	obj = malloc(sizeof(t_obj));
 	plane = malloc(sizeof(t_plane));
 	split = ft_split(chop[1], ',');
 	get_point(split, &plane->center);
@@ -41,21 +49,29 @@ void	go_get_pl(char **chop, t_vars *paser)
 	get_vec3(split, &plane->normal);
 	split = ft_split(chop[3], ',');
 	get_color(split, &plane->color);
+	obj->type = PLANE;
+	obj->obj = plane;
+	ft_lstadd_back(&paser->obj_list, ft_lstnew(obj));
 	erase_split(split);
-	paser->pl = plane;
+	// paser->pl = plane;
 }
 
 void	go_get_sp(char **chop, t_vars *paser)
 {
 	t_sphere	*sphere;
+	t_obj		*obj;
 	char		**split;
 
+	obj = malloc(sizeof(t_obj));
 	sphere = malloc(sizeof(t_sphere));
 	split = ft_split(chop[1], ',');
 	get_point(split, &sphere->center);
 	get_decimal(chop[2], &sphere->radius);
 	split = ft_split(chop[3], ',');
 	get_color(split, &sphere->color);
+	obj->type = SPHERE;
+	obj->obj = sphere;
+	ft_lstadd_back(&paser->obj_list, ft_lstnew(obj));
 	erase_split(split);
-	paser->sp = sphere;
+	// paser->sp = sphere;
 }

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 08:29:42 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 09:18:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ void	verify_pl(char **chop)
 	erase_split(center);
 	erase_split(normal);
 	erase_split(color);
-	// printf(BGRN"sph checked, all ok\n"RESET); //del
-	// printf(BWHT"===============================\n"RESET); //del
+	printf(BGRN"pl checked, all ok\n"RESET); //del
+	printf(BWHT"===============================\n"RESET); //del
 }
