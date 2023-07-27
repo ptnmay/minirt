@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 22:56:46 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/26 02:51:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 06:11:06 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	go_get_l(char **chop, t_vars *paser)
 	// erase_split(split);
 	get_decimal(chop[2], &light->brightness);
 	erase_split(chop);
+	// erase_split(split);
 	paser->light = *light;
 }
 
@@ -49,6 +50,7 @@ void	go_get_c(char **chop, t_vars *paser)
 	// erase_split(split);
 	get_decimal(chop[3], &camera->fov);
 	erase_split(chop);
+	// erase_split(split);
 	paser->camera = *camera;
 }
 
@@ -61,7 +63,7 @@ void	go_get_a(char **chop, t_vars *paser)
 	split = ft_split(chop[2], ',');
 	get_decimal(chop[1], &ambi->ratio);
 	get_color(split, &ambi->color);
+	// erase_split(split);
 	erase_split(chop);
-	erase_split(split);
 	paser->ambient = *ambi;
 }
