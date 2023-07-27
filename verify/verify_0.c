@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 08:30:00 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 20:23:36 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	verify_a(char **chop)
 	verify_len(chop, 3);
 	// printf(BCYN"A ok\n"RESET); //del
 	util_ratio(chop, 1);
+	// printf("%s\n", chop[1]); //debug
 	color = ft_split(chop[2], ',');
 	util_color(color, 3);
 	erase_split(color);
