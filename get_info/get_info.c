@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 10:41:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 10:44:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	get_line(char *line, t_vars *paser)
 {
 	char	**chop;
 	chop = split_blank(line);
-	printf("heree\n");
 	if (chop[0][0] == 'A')
 		go_get_a(chop, paser);
 	else if (chop[0][0] == 'C')
