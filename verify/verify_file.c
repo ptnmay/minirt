@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 08:46:16 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/28 02:43:36 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ void	verify_len(char **line, int len)
 
 	i = 0;
 	while (line[i])
+	{
+		if (i_c_comment(line[i]) == 1)
+			break ;
 		i++;
+	}
 	if (i != len)
 		free_error(BYEL"--len not correct--"RESET, line);
 	// printf(BMAG"--len correct--\n"RESET);
@@ -47,7 +51,6 @@ void	verify_line(char *line)
 	else if (chopchop[0][0] == 'c' && chopchop[0][1] == 'y')
 		verify_cy(chopchop);
 	else
-		// free_error(BRED"info wrong"RESET, chopchop);
 		error(BRED"info wrong"RESET);
 	erase_split(chopchop);
 }
@@ -63,7 +66,7 @@ void	goinfile(int fd)
 		error(BRED"cannot get_line"RESET);
 	while (gotline)
 	{
-		if (i_c_comment(gotline) == 0)
+		if (gotline[0] != '#')
 			verify_line(gotline);
 		i++;
 		free(gotline); //add

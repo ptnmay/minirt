@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:32:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 23:08:52 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/28 02:25:28 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	empty_line(char *line)
 
 int	i_c_comment(char *line)
 {
-	if (ft_strchr(line, '#') != NULL)
+	if (ft_strrchr(line, '#') != NULL)
 		return (1);
 	return (0);
 }
