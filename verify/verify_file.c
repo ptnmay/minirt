@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:13:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 06:11:11 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:46:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	verify_len(char **line, int len)
 		i++;
 	if (i != len)
 		free_error(BYEL"--len not correct--"RESET, line);
-	printf(BMAG"--len correct--\n"RESET);
+	// printf(BMAG"--len correct--\n"RESET);
 }
 
 void	verify_line(char *line)
@@ -30,7 +30,10 @@ void	verify_line(char *line)
 
 	chopchop = split_blank(line);
 	if (chopchop[0] == NULL)
+	{
+		free(chopchop);
 		return ;
+	}
 	if (chopchop[0][0] == 'A')
 		verify_a(chopchop);
 	else if (chopchop[0][0] == 'C')
@@ -44,7 +47,8 @@ void	verify_line(char *line)
 	else if (chopchop[0][0] == 'c' && chopchop[0][1] == 'y')
 		verify_cy(chopchop);
 	else
-		free_error(BRED"info wrong"RESET, chopchop);
+		// free_error(BRED"info wrong"RESET, chopchop);
+		error(BRED"info wrong"RESET);
 	erase_split(chopchop);
 }
 

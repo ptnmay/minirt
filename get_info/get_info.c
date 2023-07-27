@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:21:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/27 06:18:03 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:47:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,19 @@ void	get_line(char *line, t_vars *paser)
 	char	**chop;
 	
 	chop = split_blank(line);
-	// if (chop[0][0] == 'A')
-	// 	go_get_a(chop, paser);
-	// else if (chop[0][0] == 'C')
-	// 	go_get_c(chop, paser);
-	// else if (chop[0][0] == 'L')
-	// 	go_get_l(chop, paser);
-	// else if (chop[0][0] == 's' && chop[0][1] == 'p')
-	// 	go_get_sp(chop, paser);
-	// else if (chop[0][0] == 'p' && chop[0][1] == 'l')
-	// 	go_get_pl(chop, paser);
-	// else if (chop[0][0] == 'c' && chop[0][1] == 'y')
-	// 	go_get_cy(chop, paser);
-	// erase_split(chop);
 	if (chop[0][0] == 'A')
-		return(go_get_a(chop, paser));
+		go_get_a(chop, paser);
 	else if (chop[0][0] == 'C')
-		return(go_get_c(chop, paser));
+		go_get_c(chop, paser);
 	else if (chop[0][0] == 'L')
-		return(go_get_l(chop, paser));
+		go_get_l(chop, paser);
 	else if (chop[0][0] == 's' && chop[0][1] == 'p')
-		return(go_get_sp(chop, paser));
+		go_get_sp(chop, paser);
 	else if (chop[0][0] == 'p' && chop[0][1] == 'l')
-		return(go_get_pl(chop, paser));
+		go_get_pl(chop, paser);
 	else if (chop[0][0] == 'c' && chop[0][1] == 'y')
-		return(go_get_cy(chop, paser));
+		go_get_cy(chop, paser);
 	erase_split(chop);
-	//when i didn't return like this and erase_split chop. it's free wrong
 }
 
 void	get_info(t_vars *paser, char *av)
@@ -67,5 +53,4 @@ void	get_info(t_vars *paser, char *av)
 		i = 0;
 	}
 	free(line);
-	
 }

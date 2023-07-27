@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:54:38 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/25 17:16:47 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:30:00 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	verify_a(char **chop)
 	char	**color;
 
 	verify_len(chop, 3);
-	printf(BCYN"A ok\n"RESET); //del
+	// printf(BCYN"A ok\n"RESET); //del
 	util_ratio(chop, 1);
 	color = ft_split(chop[2], ',');
 	util_color(color, 3);
@@ -38,7 +38,7 @@ void	verify_cy(char **chop)
 	center = ft_split(chop[1], ',');
 	normal = ft_split(chop[2], ',');
 	color = ft_split(chop[5], ',');
-	printf(BCYN"CY ok\n"RESET); //del
+	// printf(BCYN"CY ok\n"RESET); //del
 	util_ori(center);
 	verify_len(normal, 3);
 	while (i != 3)

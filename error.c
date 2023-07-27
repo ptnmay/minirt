@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:08:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/26 03:02:09 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:39:53 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@ void	erase_split(char **av)
 	int	i;
 
 	i = 0;
-	while (av[i])
+	if (av == NULL)
+		return ;
+	while (av[i] != NULL)
 	{
 		free(av[i]);
 		i++;
 	}
 	free(av);
+	#include <stdio.h>
+	printf("erase_split done :)\n");
 }
 
 void	free_error(char *s, char **free)

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:52:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/26 03:04:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:29:42 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	verify_c(char **chop)
 	verify_len(chop, 4);
 	ori = ft_split(chop[1], ',');
 	dir = ft_split(chop[2], ',');
-	printf(BCYN"C ok\n"RESET); //del
+	// printf(BCYN"C ok\n"RESET); //del
 	util_ori(ori);
 	while (i != 3)
 	{
@@ -43,7 +43,7 @@ void	verify_l(char **chop)
 
 	verify_len(chop, 3);
 	origin = ft_split(chop[1], ',');
-	printf(BCYN"L ok\n"RESET);
+	// printf(BCYN"L ok\n"RESET);
 	util_ori(origin);
 	util_ratio(chop, 2);
 	erase_split(origin);
@@ -59,7 +59,7 @@ void	verify_sp(char **chop)
 	center = ft_split(chop[1], ',');
 	color = ft_split(chop[3], ',');
 	verify_len(chop, 4);
-	printf(BCYN"SP ok\n"RESET);
+	// printf(BCYN"SP ok\n"RESET);
 	util_ori(center);
 	util_radius(chop[2]);
 	util_color(color, 3);
@@ -81,7 +81,7 @@ void	verify_pl(char **chop)
 	normal = ft_split(chop[2], ',');
 	color = ft_split(chop[3], ',');
 	verify_len(chop, 4);
-	printf(BCYN"PL ok\n"RESET);
+	// printf(BCYN"PL ok\n"RESET);
 	util_ori(center);
 	verify_len(normal, 3);
 	while (i != 3)
@@ -89,11 +89,11 @@ void	verify_pl(char **chop)
 		util_dir(normal[i]);
 		i++;
 	}
-	printf(BCYN"dir num ok\n"RESET); //del
+	// printf(BCYN"dir num ok\n"RESET); //del
 	util_color(color, 3);
 	erase_split(center);
 	erase_split(normal);
 	erase_split(color);
-	printf(BGRN"sph checked, all ok\n"RESET); //del
-	printf(BWHT"===============================\n"RESET); //del
+	// printf(BGRN"sph checked, all ok\n"RESET); //del
+	// printf(BWHT"===============================\n"RESET); //del
 }
