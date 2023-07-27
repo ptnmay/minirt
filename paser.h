@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 04:06:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/07/24 23:03:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/07/27 09:23:52 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,10 +141,6 @@ typedef struct s_vars {
 	t_light			light;
 	t_ambient		ambient;
 	t_list			*obj_list;
-	//for print
-	t_sphere	*sp;
-	t_plane		*pl;
-	t_cylinder	*cy;
 }	t_vars;
 
 //error
